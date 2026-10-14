@@ -184,6 +184,7 @@ M5 再做一次完整验收：普通 UTF-8 文件、带 BOM 文件、GB18030 文
 | `python -m venv .venv` 失败 | `python --version` 和 `Get-Command python`；确认 Python 版本在支持范围内 | 记录完整报错；必要时安装官方 Python 3.12 后重试 |
 | `Activate.ps1` 被阻止 | PowerShell 的执行策略错误提示 | 按第 3 节使用当前进程临时设置，或直接调用 `.venv` 中的 `python.exe` |
 | `pip install` 找不到 Kivy wheel | Python 版本、Windows 架构、完整 pip 报错 | 先核对 Kivy 官方支持范围，不要盲目安装开发版 |
+| `UnicodeDecodeError: 'gbk'` 出现在安装依赖时 | 检查 `requirements.txt` 是否含有当前终端编码无法读取的字符 | 保持依赖文件为纯英文/ASCII 文本，再运行 `python -m pip install -r requirements.txt` |
 | Buildozer 构建失败 | 是否在 WSL2 的 Linux 文件系统构建、Buildozer 完整日志 | 依据首个具体错误及官方安装说明处理；不要把 Windows `.venv` 复制进去 |
 | APK 能安装但导入乱码 | 文件编码是否与导入时所选一致 | 用 GB18030 重新导入；保存可复现的非版权测试样本 |
 
