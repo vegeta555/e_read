@@ -1,0 +1,2 @@
+# Windows 本地开发依赖；安卓打包依赖在 Buildozer 环境中安装。
+kivy[base]==2.3.1
